@@ -2019,13 +2019,13 @@ static void *def_msm8952_wcd_mbhc_cal(void)
 	btn_low[0] = 100;
 	btn_high[0] = 100;
 	btn_low[1] = 275;
-	btn_high[1] = 287.5;
+	btn_high[1] = 287;
 	btn_low[2] = 475;
-	btn_high[2] = 512.5;
-	btn_low[3] = 512.5;
-	btn_high[3] = 512.5;
-	btn_low[4] = 512.5;
-	btn_high[4] = 512.5;
+	btn_high[2] = 512;
+	btn_low[3] = 512;
+	btn_high[3] = 512;
+	btn_low[4] = 512;
+	btn_high[4] = 512;
 #elif defined(CONFIG_MACH_LENOVO_TB8804)
 	btn_low[0] = 75;
 	btn_high[0] = 75;
