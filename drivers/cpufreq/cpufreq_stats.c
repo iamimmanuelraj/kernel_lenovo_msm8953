@@ -704,7 +704,7 @@ void acct_update_power(struct task_struct *task, cputime_t cputime) {
 			if (!idle_cpu(cpu))
 				++active_cpu_cnt;
 
-		index = active_cpu_cnt - 1;
+		index = active_cpu_cnt ? active_cpu_cnt - 1 : 0;
 		spin_lock_irqsave(&task_concurrent_active_time_lock, flags);
 		if (cpufreq_all_freq_init && !(task->flags & PF_EXITING) &&
 			task->concurrent_active_time)
@@ -725,7 +725,7 @@ void acct_update_power(struct task_struct *task, cputime_t cputime) {
 
 			policy_first_cpu = cpumask_first(policy->related_cpus);
 
-			index = policy_first_cpu + policy_cpu_cnt - 1;
+			index = policy_first_cpu + (policy_cpu_cnt ? policy_cpu_cnt - 1 : 0);
 			spin_lock_irqsave(&task_concurrent_policy_time_lock, flags);
 			if (cpufreq_all_freq_init && !(task->flags & PF_EXITING) &&
 				task->concurrent_policy_time)
